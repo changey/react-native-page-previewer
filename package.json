@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-react-native-page-previewer",
+  "name": "react-native-page-previewer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,6 @@
   "author": "",
   "license": "",
   "peerDependencies": {
-    "react-native": "^0.29.0"
+    "react-native": "^0.22.2"
   }
 }
