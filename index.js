@@ -1,7 +1,7 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNReactNativePagePreviewer } = NativeModules;
+// const { RNReactNativePagePreviewer } = NativeModules;
 
 var RNReactNativePagePreviewer = {
   getTitle: function() {
