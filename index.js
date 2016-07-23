@@ -14,7 +14,7 @@ var getTitle = function(doc){
     return title;
 };
 
-function getDescription(doc){
+var getDescription = function(doc){
     var description = doc("meta[name=description]").attr("content");
 
     if(description === undefined) {
@@ -28,7 +28,7 @@ function getDescription(doc){
     return description;
 }
 
-function getMediaType(doc) {
+var getMediaType = function(doc) {
 	var node = doc("meta[name=medium]"),
 		content;
 
