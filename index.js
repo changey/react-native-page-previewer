@@ -4,7 +4,7 @@ var cheerio = require('cheerio-without-node-native');
 
 // const { RNReactNativePagePreviewer } = NativeModules;
 
-ar getTitle = function(doc){
+var getTitle = function(doc){
     var title = doc("title").text();
 
     if(title === undefined || !title){
