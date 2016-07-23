@@ -9,4 +9,4 @@ var RNReactNativePagePreviewer = {
   },
 };
 
-export default RNReactNativePagePreviewer;
+module.exports = RNReactNativePagePreviewer;
