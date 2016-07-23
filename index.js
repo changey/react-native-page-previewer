@@ -167,6 +167,8 @@ var RNReactNativePagePreviewer = {
           var title = getTitle(doc);
           console.log("foo title", title)
           console.log("foo description", getDescription(doc))
+          console.log("foo description", isAdUrl(doc))
+          console.log("foo description", getImages(doc))
     })
     console.log("foo title");
   },
