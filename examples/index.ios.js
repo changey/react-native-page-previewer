@@ -15,7 +15,7 @@ import pagePreviewer from 'react-native-page-previewer';
 
 class examples extends Component {
   componentDidMount() {
-    console.log(pagePreviewer.parseLink("https://www.pivotaltracker.com"));
+    console.log(pagePreviewer.parseLink("https://www.google.com"));
   }
 
   render() {
