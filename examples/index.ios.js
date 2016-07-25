@@ -15,7 +15,12 @@ import pagePreviewer from 'react-native-page-previewer';
 
 class examples extends Component {
   componentDidMount() {
-    console.log(pagePreviewer.parseLink("https://www.google.com"));
+    // console.log(pagePreviewer.parseLink("https://www.google.com"));
+    pagePreviewer({ url: "http://www.google.com", function(err, data) {
+      if(!err) {
+          console.log(data); //Prints the meta data about the page
+      }
+    });
   }
 
   render() {

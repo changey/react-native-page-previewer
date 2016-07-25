@@ -4,7 +4,9 @@ cheerio = require('cheerio-without-node-native');
 
 var rootUrl;
 
-function getPreview(url, callback) {
+function getPreview(urlObj, callback) {
+  var url = urlObj.url;
+  
   fetch(url, {method: "GET"})
     .then((response) => {
         console.log("foo response", "POST Response",
