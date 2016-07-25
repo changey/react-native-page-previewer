@@ -166,7 +166,7 @@ function createResponseData(url, loadFailed, title, description, contentType, me
 }
 
 var RNReactNativePagePreviewer = {
-  getTitle: function(url) {
+  parseLink: function(url) {
     fetch(url, {method: "GET"})
       .then((response) => {
           console.log("foo response", "POST Response",
@@ -174,13 +174,9 @@ var RNReactNativePagePreviewer = {
 
           var html = response._bodyInit;
           var doc = cheerio.load(html);
-          var title = getTitle(doc);
-          console.log("foo title", title)
-          console.log("foo description", getDescription(doc))
-          console.log("foo description", getImages(doc))
-          console.log("foo getPreview", parseResponse(html, url))
+
+          return(parseResponse(html, url));
     })
-    console.log("foo title");
   },
 };
 
