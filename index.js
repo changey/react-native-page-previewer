@@ -1,10 +1,63 @@
 
 import { NativeModules } from 'react-native';
-var cheerio = require('cheerio-without-node-native');
+var request = require("request"),
+cheerio = require('cheerio-without-node-native'),
+urlObj = require("url");
 
-// const { RNReactNativePagePreviewer } = NativeModules;
+function getPreview(urlObj, callback) {
+	var url, proxy;
 
-var getTitle = function(doc){
+	if(typeof(urlObj) === "object") {
+		url = urlObj.url;
+		proxy = urlObj.proxy;
+	} else {
+		url = urlObj;
+	}
+
+	var req = request( {
+		uri: url,
+		proxy: proxy,
+		timeout: 10000
+	}, function(err, response, body) {
+		if(!err && response.statusCode === 200 && body) {
+			callback(null, parseResponse(body, url));
+		} else {
+			callback(null, createResponseData(url, true));
+		}
+	} );
+
+	req.on("response", function(res) {
+		var contentType = res.headers["content-type"];
+		if(contentType && contentType.indexOf("text/html") !== 0) {
+			req.abort();
+			callback(null, parseMediaResponse(res, contentType, url) );
+		}
+	});
+}
+
+function parseResponse(body, url) {
+	var doc,
+		title,
+		description,
+		mediaType,
+		images,
+		videos;
+
+	doc = cheerio.load(body);
+	title = getTitle(doc);
+
+	description = getDescription(doc);
+
+	mediaType = getMediaType(doc);
+
+	images = getImages(doc, url);
+
+	videos = getVideos(doc);
+
+	return createResponseData(url, false, title, description, "text/html", mediaType, images, videos);
+}
+
+function getTitle(doc){
     var title = doc("title").text();
 
     if(title === undefined || !title){
@@ -14,7 +67,7 @@ var getTitle = function(doc){
     return title;
 };
 
-var getDescription = function(doc){
+function getDescription(doc){
     var description = doc("meta[name=description]").attr("content");
 
     if(description === undefined) {
@@ -28,7 +81,7 @@ var getDescription = function(doc){
     return description;
 }
 
-var getMediaType = function(doc) {
+function getMediaType(doc) {
 	var node = doc("meta[name=medium]"),
 		content;
 
@@ -160,6 +213,7 @@ var RNReactNativePagePreviewer = {
           console.log("foo title", title)
           console.log("foo description", getDescription(doc))
           console.log("foo description", getImages(doc))
+          console.log("foo getPreview", getPreview("https://news.ycombinator.com"))
     })
     console.log("foo title");
   },
