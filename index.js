@@ -159,8 +159,8 @@ function createResponseData(url, loadFailed, title, description, contentType, me
 }
 
 var RNReactNativePagePreviewer = {
-  getTitle: function() {
-    fetch("https://news.ycombinator.com", {method: "GET"})
+  getTitle: function(url) {
+    fetch(url, {method: "GET"})
       .then((response) => {
           console.log("foo response", "POST Response",
           "Response Body -> ")
@@ -171,7 +171,7 @@ var RNReactNativePagePreviewer = {
           console.log("foo title", title)
           console.log("foo description", getDescription(doc))
           console.log("foo description", getImages(doc))
-          console.log("foo getPreview", parseResponse(html, "https://news.ycombinator.com"))
+          console.log("foo getPreview", parseResponse(html, url))
     })
     console.log("foo title");
   },
