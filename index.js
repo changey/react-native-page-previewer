@@ -2,6 +2,8 @@
 import { NativeModules } from 'react-native';
 cheerio = require('cheerio-without-node-native');
 
+var rootUrl;
+
 function parseResponse(body, url) {
 	var doc,
 		title,
@@ -9,6 +11,8 @@ function parseResponse(body, url) {
 		mediaType,
 		images,
 		videos;
+
+  rootUrl = url;
 
 	doc = cheerio.load(body);
 	title = getTitle(doc);
@@ -90,7 +94,7 @@ function getImages(doc, pageUrl) {
           dic[src] = 1;
           width = node.attribs["width"] || minImageSize;
           height = node.attribs["height"] || minImageSize;
-          src = url += src;
+          src = rootUrl += src;
           if(width >= minImageSize && height >= minImageSize) {
 							images.push(src);
 					}

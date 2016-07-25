@@ -15,7 +15,7 @@ import pagePreviewer from 'react-native-page-previewer';
 
 class examples extends Component {
   componentDidMount() {
-    pagePreviewer.getTitle("www.google.com");
+    pagePreviewer.getTitle("https://www.google.com");
   }
 
   render() {
