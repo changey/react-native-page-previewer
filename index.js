@@ -1,7 +1,6 @@
 
 import { NativeModules } from 'react-native';
-var request = require("request"),
-cheerio = require('cheerio-without-node-native'),
+cheerio = require('cheerio-without-node-native');
 
 function parseResponse(body, url) {
 	var doc,
