@@ -175,7 +175,7 @@ var RNReactNativePagePreviewer = {
           var html = response._bodyInit;
           var doc = cheerio.load(html);
 
-          return(parseResponse(html, url));
+          return parseResponse(html, url);
     })
   },
 };
