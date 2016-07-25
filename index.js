@@ -9,9 +9,6 @@ function getPreview(urlObj, callback) {
 
   fetch(url, {method: "GET"})
     .then((response) => {
-        console.log("foo response", "POST Response",
-        "Response Body -> ")
-
         var html = response._bodyInit;
         var doc = cheerio.load(html);
 
