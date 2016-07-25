@@ -15,6 +15,7 @@
     "react-native": "^0.22.2"
   },
   "dependencies": {
-    "cheerio-without-node-native": "^0.20.1"
+    "cheerio-without-node-native": "^0.20.1",
+    "url": "^0.11.0"
   }
 }
