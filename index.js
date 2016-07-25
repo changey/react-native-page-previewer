@@ -6,7 +6,7 @@ var rootUrl;
 
 function getPreview(urlObj, callback) {
   var url = urlObj.url;
-  
+
   fetch(url, {method: "GET"})
     .then((response) => {
         console.log("foo response", "POST Response",
@@ -15,38 +15,8 @@ function getPreview(urlObj, callback) {
         var html = response._bodyInit;
         var doc = cheerio.load(html);
 
-        // console.log(parseResponse(html, url))
         callback(null, parseResponse(html, url));
-  })
-
-	// var url, proxy;
-  //
-	// if(typeof(urlObj) === "object") {
-	// 	url = urlObj.url;
-	// 	proxy = urlObj.proxy;
-	// } else {
-	// 	url = urlObj;
-	// }
-  //
-	// var req = request( {
-	// 	uri: url,
-	// 	proxy: proxy,
-	// 	timeout: 10000
-	// }, function(err, response, body) {
-	// 	if(!err && response.statusCode === 200 && body) {
-	// 		callback(null, parseResponse(body, url));
-	// 	} else {
-	// 		callback(null, createResponseData(url, true));
-	// 	}
-	// } );
-  //
-	// req.on("response", function(res) {
-	// 	var contentType = res.headers["content-type"];
-	// 	if(contentType && contentType.indexOf("text/html") !== 0) {
-	// 		req.abort();
-	// 		callback(null, parseMediaResponse(res, contentType, url) );
-	// 	}
-	// });
+  });
 }
 
 
@@ -210,12 +180,5 @@ function createResponseData(url, loadFailed, title, description, contentType, me
 		audios: audios
 	};
 }
-
-var RNReactNativePagePreviewer = {
-  // parseLink: function(url) {
-  //
-  // },
-
-};
 
 module.exports = getPreview;
