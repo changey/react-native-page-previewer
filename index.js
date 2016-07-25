@@ -90,7 +90,10 @@ function getImages(doc, pageUrl) {
           dic[src] = 1;
           width = node.attribs["width"] || minImageSize;
           height = node.attribs["height"] || minImageSize;
-          images.push(src);
+          src = url += src;
+          if(width >= minImageSize && height >= minImageSize) {
+							images.push(src);
+					}
         }
       });
     }
