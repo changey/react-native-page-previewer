@@ -76,7 +76,7 @@ function getImages(doc, pageUrl) {
 						width = node.attribs["width"] || minImageSize;
 						height = node.attribs["height"] || minImageSize;
 						src = urlObj.resolve(pageUrl, src);
-						if(width >= minImageSize && height >= minImageSize && !isAdUrl(src)) {
+						if(width >= minImageSize && height >= minImageSize) {
 							images.push(src);
 						}
 					}
@@ -85,14 +85,6 @@ function getImages(doc, pageUrl) {
 		}
 	}
 	return images;
-}
-
-function isAdUrl(url) {
-	if(url) {
-		return adblock.isAdUrl(url);
-	} else {
-		return false;
-	}
 }
 
 function getVideos(doc) {
@@ -167,7 +159,6 @@ var RNReactNativePagePreviewer = {
           var title = getTitle(doc);
           console.log("foo title", title)
           console.log("foo description", getDescription(doc))
-          console.log("foo description", isAdUrl(doc))
           console.log("foo description", getImages(doc))
     })
     console.log("foo title");
