@@ -1,16 +1,24 @@
 {
   "name": "react-native-page-previewer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "page preview",
+    "link preview",
+    "link-previewer",
+    "page-previewer",
+    "oEmbed",
   ],
-  "author": "",
-  "license": "",
+  "author": "Eric Chang",
+  "license": {
+  	"type": "MIT",
+  	"url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
+  },
   "peerDependencies": {
     "react-native": "^0.22.2"
   },

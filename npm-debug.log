@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.2.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.8.9
+3 info using node@v6.2.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/ericchang/Documents/work/react-native-page-previewer',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/ericchang/.npm correctMkdir not in flight; initializing
+10 info lifecycle react-native-page-previewer@0.1.0~prepublish: react-native-page-previewer@0.1.0
+11 silly lifecycle react-native-page-previewer@0.1.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/ericchang/.npm/react-native-page-previewer/0.1.0/package.tgz',
+12 verbose tar pack   '/Users/ericchang/Documents/work/react-native-page-previewer' ]
+13 verbose tarball /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package.tgz
+14 verbose folder /Users/ericchang/Documents/work/react-native-page-previewer
+15 verbose addLocalTarball adding from inside cache /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package.tgz
+16 verbose correctMkdir /Users/ericchang/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd react-native-page-previewer@0.1.0
+18 verbose afterAdd /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/ericchang/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package/package.json written
+21 silly publish { name: 'react-native-page-previewer',
+21 silly publish   version: '0.1.0',
+21 silly publish   description: '## Getting started',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   keywords: [ 'react-native' ],
+21 silly publish   author: '',
+21 silly publish   license: '',
+21 silly publish   peerDependencies: { 'react-native': '^0.22.2' },
+21 silly publish   dependencies: { 'cheerio-without-node-native': '^0.20.1' },
+21 silly publish   readme: '\n# react-native-page-previewer\n\n## Getting started\n\n`$ npm install react-native-page-previewer --save`\n\n## Usage\n```javascript\nimport preview from \'react-native-page-previewer\';\n\nvar preview = require("page-previewer");\npreview("http://www.google.com", function(err, data) {\n    if(!err) {\n        console.log(data);\n    }\n});\n```\n\nsample return\n\n```\n{ url: \'https://www.google.com\',\n  loadFailed: false,\n  title: \'Google\',\n  description: \'Search the world\\\'s information, including webpages, images, videos and more. Google has many special features to help you find exactly what you\\\'re looking for.\',\n  contentType: \'text/html\',\n  mediaType: \'website\',\n  images: [ \'https://www.google.com/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png\' ],\n  videos: undefined,\n  audios: undefined }\n```\n## References\n1. https://github.com/myspace/page-previewer\n2. https://github.com/oyyd/cheerio-without-node-native\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'a5d771f27c6cbbc7ea819f309169108c524dd991',
+21 silly publish   _id: 'react-native-page-previewer@0.1.0',
+21 silly publish   _shasum: '9072267718c3e62a0f0da10975cf820d5ed93d15',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name react-native-page-previewer
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'react-native-page-previewer',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'react-native-page-previewer',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/react-native-page-previewer
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/ericchang/.npm/react-native-page-previewer/0.1.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/react-native-page-previewer
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 3:01:00 PM
+33 verbose request using bearer token for auth
+34 verbose request id fb2c9214309fbfbe
+35 http request PUT https://registry.npmjs.org/react-native-page-previewer
+36 http 403 https://registry.npmjs.org/react-native-page-previewer
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Mon, 25 Jul 2016 22:01:22 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1469484062.310892,VS0,VE20242',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/ericchang/.npm/registry.npmjs.org/react-native-page-previewer on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : react-native-page-previewer
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid react-native-page-previewer
+43 verbose cwd /Users/ericchang/Documents/work/react-native-page-previewer
+44 error Darwin 15.2.0
+45 error argv "/usr/local/Cellar/node/6.2.0/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.2.0
+47 error npm  v3.8.9
+48 error code E403
+49 error "You cannot publish over the previously published version 0.1.0." : react-native-page-previewer
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
