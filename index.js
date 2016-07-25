@@ -2,38 +2,6 @@
 import { NativeModules } from 'react-native';
 var request = require("request"),
 cheerio = require('cheerio-without-node-native'),
-urlObj = require("url");
-
-function getPreview(urlObj, callback) {
-	var url, proxy;
-
-	if(typeof(urlObj) === "object") {
-		url = urlObj.url;
-		proxy = urlObj.proxy;
-	} else {
-		url = urlObj;
-	}
-
-	var req = request( {
-		uri: url,
-		proxy: proxy,
-		timeout: 10000
-	}, function(err, response, body) {
-		if(!err && response.statusCode === 200 && body) {
-			callback(null, parseResponse(body, url));
-		} else {
-			callback(null, createResponseData(url, true));
-		}
-	} );
-
-	req.on("response", function(res) {
-		var contentType = res.headers["content-type"];
-		if(contentType && contentType.indexOf("text/html") !== 0) {
-			req.abort();
-			callback(null, parseMediaResponse(res, contentType, url) );
-		}
-	});
-}
 
 function parseResponse(body, url) {
 	var doc,
@@ -213,7 +181,7 @@ var RNReactNativePagePreviewer = {
           console.log("foo title", title)
           console.log("foo description", getDescription(doc))
           console.log("foo description", getImages(doc))
-          console.log("foo getPreview", getPreview("https://news.ycombinator.com"))
+          console.log("foo getPreview", parseResponse(html, "https://news.ycombinator.com"))
     })
     console.log("foo title");
   },
