@@ -68,41 +68,32 @@ function getImages(doc, pageUrl) {
 
 	nodes = doc("meta[property='og:image']");
 
-	if(nodes.length) {
-		nodes.each(function(index, node){
-            src = node.attribs["content"];
-            if(src){
-                src = urlObj.resolve(pageUrl, src);
-                images.push(src);
-            }
-		});
-	}
+	// if(nodes.length) {
+	// 	nodes.each(function(index, node){
+  //           src = node.attribs["content"];
+  //           if(src){
+  //               src = urlObj.resolve(pageUrl, src);
+  //               images.push(src);
+  //           }
+	// 	});
+	// }
 
 	if(images.length <= 0) {
-		src = doc("link[rel=image_src]").attr("href");
-		if(src) {
-            src = urlObj.resolve(pageUrl, src);
-            images = [ src ];
-		} else {
-			nodes = doc("img");
+    nodes = doc("img");
 
-			if(nodes.length) {
-				dic = {};
-				images = [];
-				nodes.each(function(index, node) {
-					src = node.attribs["src"];
-					if(src && !dic[src]) {
-						dic[src] = 1;
-						width = node.attribs["width"] || minImageSize;
-						height = node.attribs["height"] || minImageSize;
-						src = urlObj.resolve(pageUrl, src);
-						if(width >= minImageSize && height >= minImageSize) {
-							images.push(src);
-						}
-					}
-				});
-			}
-		}
+    if(nodes.length) {
+      dic = {};
+      images = [];
+      nodes.each(function(index, node) {
+        src = node.attribs["src"];
+        if(src && !dic[src]) {
+          dic[src] = 1;
+          width = node.attribs["width"] || minImageSize;
+          height = node.attribs["height"] || minImageSize;
+          images.push(src);
+        }
+      });
+    }
 	}
 	return images;
 }
