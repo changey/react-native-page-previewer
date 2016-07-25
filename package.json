@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "cheerio-without-node-native": "^0.20.1",
+    "crypto": "0.0.3",
+    "request": "^2.74.0",
     "url": "^0.11.0"
   }
 }
