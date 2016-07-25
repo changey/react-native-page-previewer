@@ -9,7 +9,6 @@
 ```javascript
 import preview from 'react-native-page-previewer';
 
-var preview = require("page-previewer");
 preview("http://www.google.com", function(err, data) {
     if(!err) {
         console.log(data);
