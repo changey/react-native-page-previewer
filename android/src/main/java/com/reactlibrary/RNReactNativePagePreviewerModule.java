@@ -10,7 +10,7 @@ public class RNReactNativePagePreviewerModule extends ReactContextBaseJavaModule
 
   private final ReactApplicationContext reactContext;
 
-  public RNShareModule(ReactApplicationContext reactContext) {
+  public RNReactNativePagePreviewerModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
