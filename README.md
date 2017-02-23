@@ -9,7 +9,7 @@
 ```javascript
 import preview from 'react-native-page-previewer';
 
-preview("http://www.google.com", function(err, data) {
+preview({url:"http://www.google.com"}, function(err, data) {
     if(!err) {
         console.log(data);
     }
