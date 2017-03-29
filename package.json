@@ -16,14 +16,15 @@
   ],
   "author": "Eric Chang",
   "license": {
-  	"type": "MIT",
-  	"url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
+    "type": "MIT",
+    "url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
   },
   "peerDependencies": {
     "react-native": "^0.22.2"
   },
-  "repository" : "git://github.com/changey/react-native-page-previewer.git",
+  "repository": "git://github.com/changey/react-native-page-previewer.git",
   "dependencies": {
-    "cheerio-without-node-native": "^0.20.1"
+    "cheerio-without-node-native": "^0.20.1",
+    "url": "0.11.0"
   }
 }
