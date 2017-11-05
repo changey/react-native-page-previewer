@@ -5,7 +5,7 @@ urlObj = require('url');
 cheerio = require('cheerio-without-node-native');
 
 
-async getPreview(urlObj, callback) {
+async getPreview = (urlObj, callback) => {
   var url = urlObj.url;
 
   let response = await axios.get(url)
