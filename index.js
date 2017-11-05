@@ -1,14 +1,15 @@
 
 import { NativeModules } from 'react-native';
+import axios from "axios"
 urlObj = require('url');
 cheerio = require('cheerio-without-node-native');
 
 function getPreview(urlObj, callback) {
   var url = urlObj.url;
 
-  fetch(url, {method: "GET"})
+  axios.get(url)
     .then((response) => {
-        var html = response._bodyInit;
+        var html = response.data;
         var doc = cheerio.load(html);
 
         callback(null, parseResponse(html, url));
