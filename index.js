@@ -1,22 +1,20 @@
 
 import { NativeModules } from 'react-native';
-import axios from "axios";
 urlObj = require('url');
 cheerio = require('cheerio-without-node-native');
 
-
-getPreview = async (urlObj, callback) => {
+function getPreview(urlObj, callback) {
   var url = urlObj.url;
 
-  let response = await axios.get(url)
-  console.log(response, "this is what we got back from that")
-  const html = response._bodyInit;
-  const doc = cheerio.load(html);
+  fetch(url, {method: "GET"})
+    .then((response) => {
+      console.log(respone, "this is what we got back this time")
+        var html = response._bodyInit;
+        var doc = cheerio.load(html);
 
-  callback(null, parseResponse(html, url));
-
+        callback(null, parseResponse(html, url));
+  });
 }
-
 
 
 function parseResponse(body, url) {
