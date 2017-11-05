@@ -9,7 +9,7 @@ getPreview = async (urlObj, callback) => {
   var url = urlObj.url;
 
   let response = await axios.get(url)
-
+  console.log(response, "this is what we got back from that")
   const html = response._bodyInit;
   const doc = cheerio.load(html);
 
