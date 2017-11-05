@@ -8,7 +8,7 @@ function getPreview(urlObj, callback) {
 
   fetch(url, {method: "GET"})
     .then((response) => {
-      console.log(respone, "this is what we got back this time")
+      console.log(response, "this is what we got back this time")
         var html = response._bodyInit;
         var doc = cheerio.load(html);
 
