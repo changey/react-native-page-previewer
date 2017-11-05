@@ -24,6 +24,7 @@
   },
   "repository": "git://github.com/changey/react-native-page-previewer.git",
   "dependencies": {
+    "axios": "^0.17.0",
     "cheerio-without-node-native": "^0.20.1",
     "url": "0.11.0"
   }
