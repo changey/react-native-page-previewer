@@ -6,17 +6,15 @@ cheerio = require('cheerio-without-node-native');
 
 function getPreview(urlObj, callback) {
   var url = urlObj.url;
-  try{
     axios.get(url)
       .then((response) => {
           var html = response.data;
           var doc = cheerio.load(html);
 
           callback(null, parseResponse(html, url));
+    }).catch(function(error){
+      callback(null, parseResponse(null, url))
     });
-  }catch(error){
-    
-  }
 }
 
 
