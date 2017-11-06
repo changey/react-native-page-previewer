@@ -13,7 +13,6 @@ function getPreview(urlObj, callback) {
 
           callback(null, parseResponse(html, url));
     }).catch(function(error){
-      callback(null, parseResponse(null, url))
     });
 }
 
