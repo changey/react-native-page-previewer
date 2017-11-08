@@ -20,7 +20,7 @@
     "url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
   },
   "peerDependencies": {
-    "react-native": "^0.22.2"
+    "react-native": ">=0.22.2"
   },
   "repository": "git://github.com/changey/react-native-page-previewer.git",
   "dependencies": {
